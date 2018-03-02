@@ -13,15 +13,18 @@ import SwiftyJSON
 class NewsController {
     var cache = [ArticleModel]()
     
-    func loadNews(completion: () -> Void) {
+    func loadNews(completion: @escaping ([ArticleModel]?, Error?) -> Void) {
         Alamofire.request(URLManager.newsList).responseJSON { response in
             
-            if let json = response.result.value {
-                print("JSON: \(json)")
-            }
-            
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)")
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                for (_, JSON) in json {
+                    self.cache.append(ArticleModel(json: JSON))
+                }
+                completion(self.cache, nil)
+            case .failure(let error):
+                completion(nil, error)
             }
         }
 
