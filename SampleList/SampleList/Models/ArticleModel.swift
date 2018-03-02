@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import SwiftyJSON
+
+struct ArticleModel {
+    var title:String?
+    var description:String?
+    var image:String?
+    
+    init(json:JSON) {
+        title = json["title"].string
+        description = json["description"].string
+        image = json["image"].string
+    }
+}
