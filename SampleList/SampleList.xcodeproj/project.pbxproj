@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B744B87204E32F100021364 /* mock3.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B744B85204E32F100021364 /* mock3.json */; };
-		1B744B88204E32F100021364 /* mock2.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B744B86204E32F100021364 /* mock2.json */; };
+		1B744B8B204E359500021364 /* mock3.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B744B89204E359400021364 /* mock3.json */; };
+		1B744B8C204E359500021364 /* mock2.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B744B8A204E359500021364 /* mock2.json */; };
 		1BA759C52048CFA200B99A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA759C42048CFA200B99A7D /* AppDelegate.swift */; };
 		1BA759CA2048CFA200B99A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA759C82048CFA200B99A7D /* Main.storyboard */; };
 		1BA759CC2048CFA200B99A7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BA759CB2048CFA200B99A7D /* Assets.xcassets */; };
@@ -41,8 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B744B85204E32F100021364 /* mock3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = mock3.json; path = SampleListTests/mock3.json; sourceTree = SOURCE_ROOT; };
-		1B744B86204E32F100021364 /* mock2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = mock2.json; path = SampleListTests/mock2.json; sourceTree = SOURCE_ROOT; };
+		1B744B89204E359400021364 /* mock3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock3.json; sourceTree = "<group>"; };
+		1B744B8A204E359500021364 /* mock2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock2.json; sourceTree = "<group>"; };
 		1BA759C12048CFA200B99A7D /* SampleList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA759C42048CFA200B99A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BA759C92048CFA200B99A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,9 +91,9 @@
 		1B744B84204E32DE00021364 /* json */ = {
 			isa = PBXGroup;
 			children = (
+				1B744B8A204E359500021364 /* mock2.json */,
+				1B744B89204E359400021364 /* mock3.json */,
 				1BE713EB204E276300B4C975 /* mock1.json */,
-				1B744B86204E32F100021364 /* mock2.json */,
-				1B744B85204E32F100021364 /* mock3.json */,
 			);
 			path = json;
 			sourceTree = "<group>";
@@ -298,9 +298,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B744B88204E32F100021364 /* mock2.json in Resources */,
+				1B744B8C204E359500021364 /* mock2.json in Resources */,
 				1BE713EC204E276300B4C975 /* mock1.json in Resources */,
-				1B744B87204E32F100021364 /* mock3.json in Resources */,
+				1B744B8B204E359500021364 /* mock3.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
