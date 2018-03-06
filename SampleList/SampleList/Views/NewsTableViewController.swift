@@ -18,7 +18,7 @@ class NewsTableViewController: UITableViewController {
         super.viewDidLoad()
         SVProgressHUD.show()
         newsController.loadNews { [weak self] (data, error) in
-            if ((error?.localizedDescription) != nil) {
+            if (error != nil) {
                 SVProgressHUD.show(withStatus: error?.localizedDescription)
             } else {
                 SVProgressHUD.dismiss()

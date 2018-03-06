@@ -7,23 +7,23 @@
 //
 
 import Foundation
-import Alamofire
-import SwiftyJSON
 
 class NewsController {
     var cache = [ArticleModel]()
+    var newsAPI:APIProtocol = NewsAPI()
     
     func loadNews(completion: @escaping ([ArticleModel]?, Error?) -> Void) {
-        Alamofire.request(URLManager.newsList).responseJSON { [weak self] response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                for (_, JSON) in json {
-                    self?.cache.append(ArticleModel(json: JSON))
-                }
-                completion(self?.cache, nil)
-            case .failure(let error):
+        newsAPI.fetchAll { [weak self] (json, error) in
+            if error != nil {
                 completion(nil, error)
+            } else {
+                var items = [ArticleModel]()
+                for (_, JSON) in json! {
+                    let item = ArticleModel(json: JSON)
+                    items.append(item)
+                }
+                self?.cache = items
+                completion(items, nil)
             }
         }
     }
