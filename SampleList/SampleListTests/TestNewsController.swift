@@ -13,12 +13,14 @@ class TestNewsController: XCTestCase {
     let controller = NewsController()
 
     func testLoadNews() {
-        controller.newsAPI = newsMock1()
+        let mockAPI = MockAPI()
+        mockAPI.filename = "mock1"
+        controller.newsAPI = mockAPI
         controller.loadNews { (data, error) in
             XCTAssertTrue(data?.count == 3)
         }
 
-        controller.newsAPI = newsMock2()
+        mockAPI.filename = "mock2"
         controller.loadNews { (data, error) in
             let item = data?.last
             XCTAssertTrue(item?.title! == "Hello")
@@ -26,7 +28,7 @@ class TestNewsController: XCTestCase {
             XCTAssertNil(item?.image)
         }
         
-        controller.newsAPI = newsMock3()
+        mockAPI.filename = "mock3"
         controller.loadNews { (data, error) in
             XCTAssertTrue(data?.count == 2)
             let item = data?.first
@@ -40,26 +42,10 @@ class TestNewsController: XCTestCase {
     
 }
 
-class newsMock1:APIProtocol {
+class MockAPI:APIProtocol {
+    var filename = "mock1"
     func fetchAll(completion: @escaping (JSON?, Error?) -> Void) {
-        if let path = Bundle.main.path(forResource: "mock1", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-                let jsonObj = try JSON(data: data)
-                completion(jsonObj, nil)
-            } catch {
-                // handle error
-            }
-        } else {
-            //ñaña
-        }
-    }
-    
-}
-
-class newsMock2:APIProtocol {
-    func fetchAll(completion: @escaping (JSON?, Error?) -> Void) {
-        if let path = Bundle.main.path(forResource: "mock2", ofType: "json") {
+        if let path = Bundle.main.path(forResource: filename, ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
                 let jsonObj = try JSON(data: data)
@@ -72,18 +58,4 @@ class newsMock2:APIProtocol {
     
 }
 
-class newsMock3:APIProtocol {
-    func fetchAll(completion: @escaping (JSON?, Error?) -> Void) {
-        if let path = Bundle.main.path(forResource: "mock3", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-                let jsonObj = try JSON(data: data)
-                completion(jsonObj, nil)
-            } catch {
-                // handle error
-            }
-        }
-    }
-    
-}
 
