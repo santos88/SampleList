@@ -10,7 +10,11 @@ import Foundation
 
 class NewsController {
     var cache = [ArticleModel]()
-    var newsAPI:APIProtocol = NewsAPI()
+    var newsAPI:APIProtocol
+    
+    init() {
+        newsAPI = NewsAPI()
+    }
     
     func loadNews(completion: @escaping ([ArticleModel]?, Error?) -> Void) {
         newsAPI.fetchAll { [weak self] (json, error) in

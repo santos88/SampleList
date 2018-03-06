@@ -10,14 +10,14 @@ import XCTest
 import SwiftyJSON
 
 class TestNewsController: XCTestCase {
-    
+    let controller = NewsController()
+
     func testLoadNews() {
-        let controller = NewsController()
         controller.newsAPI = newsMock1()
         controller.loadNews { (data, error) in
             XCTAssertTrue(data?.count == 3)
         }
-        
+
         controller.newsAPI = newsMock2()
         controller.loadNews { (data, error) in
             let item = data?.last
@@ -28,13 +28,14 @@ class TestNewsController: XCTestCase {
         
         controller.newsAPI = newsMock3()
         controller.loadNews { (data, error) in
-            XCTAssertTrue(data?.count == 1)
-            let item = data?.last
+            XCTAssertTrue(data?.count == 2)
+            let item = data?.first
             XCTAssertTrue(item?.title! == "Pickle")
             XCTAssertTrue(item?.description! == "Rick")
             XCTAssertTrue(item?.image! == "http://google.com")
 
         }
+        
     }
     
 }
@@ -49,6 +50,8 @@ class newsMock1:APIProtocol {
             } catch {
                 // handle error
             }
+        } else {
+            //ñaña
         }
     }
     
@@ -71,7 +74,7 @@ class newsMock2:APIProtocol {
 
 class newsMock3:APIProtocol {
     func fetchAll(completion: @escaping (JSON?, Error?) -> Void) {
-        if let path = Bundle.main.path(forResource: "mock2", ofType: "json") {
+        if let path = Bundle.main.path(forResource: "mock3", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
                 let jsonObj = try JSON(data: data)

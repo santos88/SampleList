@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1B744B8B204E359500021364 /* mock3.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B744B89204E359400021364 /* mock3.json */; };
 		1B744B8C204E359500021364 /* mock2.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B744B8A204E359500021364 /* mock2.json */; };
+		1B744B8D204E3DE600021364 /* mock1.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BE713EB204E276300B4C975 /* mock1.json */; };
+		1B744B8E204E3DE800021364 /* mock3.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B744B89204E359400021364 /* mock3.json */; };
+		1B744B8F204E3DEC00021364 /* mock2.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B744B8A204E359500021364 /* mock2.json */; };
 		1BA759C52048CFA200B99A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA759C42048CFA200B99A7D /* AppDelegate.swift */; };
 		1BA759CA2048CFA200B99A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA759C82048CFA200B99A7D /* Main.storyboard */; };
 		1BA759CC2048CFA200B99A7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BA759CB2048CFA200B99A7D /* Assets.xcassets */; };
@@ -288,7 +291,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B744B8F204E3DEC00021364 /* mock2.json in Resources */,
 				1BA759CF2048CFA200B99A7D /* LaunchScreen.storyboard in Resources */,
+				1B744B8D204E3DE600021364 /* mock1.json in Resources */,
+				1B744B8E204E3DE800021364 /* mock3.json in Resources */,
 				1BA759CC2048CFA200B99A7D /* Assets.xcassets in Resources */,
 				1BA759CA2048CFA200B99A7D /* Main.storyboard in Resources */,
 			);
