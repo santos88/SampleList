@@ -12,16 +12,17 @@ import AlamofireImage
 
 class NewsTableViewController: UITableViewController {
     var newsController = NewsController()
+    var selectedArticle : ArticleModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         SVProgressHUD.show()
-        newsController.loadNews { (data, error) in
+        newsController.loadNews { [weak self] (data, error) in
             if ((error?.localizedDescription) != nil) {
                 SVProgressHUD.show(withStatus: error?.localizedDescription)
             } else {
                 SVProgressHUD.dismiss()
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
             }
         }
     }
@@ -35,19 +36,23 @@ class NewsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "newsIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "newsIdentifier", for: indexPath) as! NewsTableViewCell
         let model = self.newsController.cache[indexPath.row]
-        cell.textLabel?.text = model.title
-        cell.detailTextLabel?.text = model.description
-        cell.imageView?.af_setImage(withURL: URL(string: model.image!)!)
+        cell.configure(article: model)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedArticle = self.newsController.cache[indexPath.row]
+        performSegue(withIdentifier: "goDetail", sender: self)
     }
 
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier! == "goDetail"{
-            
+            let vc = segue.destination as! NewsArticleViewController
+            vc.article = selectedArticle
         }
     }
 

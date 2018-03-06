@@ -7,13 +7,23 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class NewsArticleViewController: UIViewController {
-
+    
+    var article : ArticleModel?
+    
+    @IBOutlet weak var descriptionText: UITextView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var newsImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        titleLabel.text = article?.title
+        descriptionText.text = article?.description
+        if let image = article?.image {
+            newsImage.af_setImage(withURL: URL(string: image)!)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +31,4 @@ class NewsArticleViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

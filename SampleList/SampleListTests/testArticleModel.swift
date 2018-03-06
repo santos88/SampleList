@@ -1,15 +1,14 @@
 //
-//  SampleListTests.swift
+//  testArticleModel.swift
 //  SampleListTests
 //
-//  Created by Santos Ramon on 3/1/18.
+//  Created by Santos Ramon on 3/5/18.
 //  Copyright © 2018 Santos Ramon. All rights reserved.
 //
 
 import XCTest
-@testable import SampleList
 
-class SampleListTests: XCTestCase {
+class testArticleModel: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -24,13 +23,6 @@ class SampleListTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
     
 }
