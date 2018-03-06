@@ -1,0 +1,18 @@
+ [
+  {
+  "title": "Laptop 1",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus varius sem, eu ultricies urna condimentum a. Suspendisse aliquam mi vel orci viverra consectetur. Morbi at diam neque. Nam commodo risus sit amet mi hendrerit, sed facilisis quam tincidunt. Nulla facilisi. Nam commodo ultricies dignissim. In tempor sapien mattis, suscipit dolor at, semper odio. Proin interdum sapien sit amet nibh tincidunt, luctus congue nunc viverra. Proin pharetra neque vel orci porta, et pharetra turpis venenatis. Nam volutpat aliquet ante, nec ullamcorper felis semper eget. Vivamus posuere suscipit gravida. Nunc ut efficitur turpis.",
+  "image": "https://picsum.photos/100/100?image=0"
+  },
+  {
+  "title": "Laptop 2",
+  "description": "In hac habitasse platea dictumst. Aliquam mi erat, fermentum non nisi non, congue dictum velit. Suspendisse hendrerit velit at vulputate suscipit. Nunc in erat vestibulum, lacinia neque vel, molestie arcu. Proin vestibulum sagittis mauris, eu consequat neque imperdiet non. Donec feugiat viverra quam, sit amet pulvinar justo accumsan sed. Praesent gravida eros in libero facilisis, quis molestie nisl interdum. Ut gravida vel felis quis rutrum. Mauris accumsan lacus et sem efficitur, in mattis sem lacinia. Suspendisse id nisi arcu. Maecenas at magna in nisl ornare gravida. Pellentesque vitae auctor sem.",
+  "image": "https://picsum.photos/200/200?image=1"
+  },
+  {
+  "title": "Laptop 3",
+  "description": "Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut pharetra cursus suscipit. Fusce consequat placerat sem ac imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur gravida tempus leo eget hendrerit. Sed et libero id turpis consectetur eleifend ac vitae leo. Aenean mattis augue massa, eget euismod ipsum pellentesque nec. Quisque gravida dapibus nisl, sed laoreet eros lobortis quis.",
+  "image": "https://picsum.photos/300/300?image=2"
+  }
+  ]
+
